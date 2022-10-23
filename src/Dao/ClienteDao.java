@@ -13,7 +13,7 @@ import modelo.Cliente;
 public class ClienteDao {
 	
 	public void save(Cliente cliente) {
-		String sql = "INSERT INFO cliente (nome_cliente, email_cliente,senha_cliente) VALUES \r\n" + "(?,?,?,?,?,?,?)";
+		String sql = "INSERT INTO cliente (nome_cliente, email_cliente,senha_cliente) VALUES \r\n (?,?,?);";
 		
 		Connection conn = null;
 		PreparedStatement pstm = null;
@@ -27,7 +27,10 @@ public class ClienteDao {
 			pstm.setString(2, cliente.getEmail_cliente());
 			pstm.setString(3, cliente.getSenha_cliente());
 			
+			
 			pstm.execute();
+			
+			System.out.println("contato salvo com sucesso!");
 		}catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -104,7 +107,7 @@ public class ClienteDao {
 // metodo update
 	
 	public void update (Cliente cliente) {
-		String sql = "UPDATE cliente SET nome_cliente = ?,email_cliente = ?,senha_cliente = ?, WHERE id_cliente = ?";
+		String sql = "UPDATE cliente SET nome_cliente = ? , email_cliente = ? , senha_cliente = ? , WHERE id_cliente = ?";
 		
 		Connection conn = null;
 		PreparedStatement pstm = null;
@@ -117,7 +120,12 @@ public class ClienteDao {
 			pstm.setString(1, cliente.getNome_cliente());
 			pstm.setString(2, cliente.getEmail_cliente());
 			pstm.setString(3, cliente.getSenha_cliente());
+			
+			
 			pstm.setInt(4, cliente.getId_cliente());
+			
+			
+			
 			
 			pstm.execute();
 			

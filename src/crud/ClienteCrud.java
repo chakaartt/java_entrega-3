@@ -1,7 +1,6 @@
 package crud;
 
-import java.util.ArrayList;
-import java.util.List;
+
 import java.util.Scanner;
 
 import Dao.ClienteDao;
@@ -23,14 +22,14 @@ public class ClienteCrud {
 		String email_cliente = "";
 		String senha_cliente = "";
 		
-		List<Cliente> cliente =  new ArrayList<Cliente>();
+		
 		
 		do {
-			System.out.println("--- CRUD PARCEIRO----");
-			System.out.println("1 - CADASTRO DO PARCEIRO");
-			System.out.println("2 - CONSULTAR PARCEIRO");
-			System.out.println("3 - DELETA PARCEIRO");
-			System.out.println("4 - ATUALIZAR PARCEIRO");
+			System.out.println("--- CRUD CLIENTE----");
+			System.out.println("1 - CADASTRO DO CLIENTE");
+			System.out.println("2 - CONSULTAR CLIENTE");
+			System.out.println("3 - DELETA CLIENTE");
+			System.out.println("4 - ATUALIZAR CLIENTE");
 			System.out.println("0 - SAIR");
 			
 			opcao = teclado.nextInt();
@@ -38,7 +37,7 @@ public class ClienteCrud {
 			
 			switch (opcao) {
 			case 1:
-			 System.out.println("**CADASTRO DO PARCEIROS");
+			 System.out.println("**CADASTRO DO CLIENTE");
 			 
 			 System.out.println("DIGITE SEU NOME :");
 			 nome_cliente = teclado.nextLine();
@@ -81,10 +80,10 @@ public class ClienteCrud {
 				
 			case 4:
 				
-				System.out.println("Digite o id da Parceiro: ");
+				System.out.println("Digite o id da Cliente: ");
 				id_cliente = teclado.nextInt();
 
-				System.out.println("Digite o novo nome da Parceiro: ");
+				System.out.println("Digite o novo nome da Cliente: ");
 				nome_cliente = teclado.next();
 				
 				System.out.println("Digite um novo email: ");
