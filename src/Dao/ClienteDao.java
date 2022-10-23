@@ -107,7 +107,8 @@ public class ClienteDao {
 // metodo update
 	
 	public void update (Cliente cliente) {
-		String sql = "UPDATE cliente SET nome_cliente = ? , email_cliente = ? , senha_cliente = ? , WHERE id_cliente = ?";
+		String sql = "UPDATE cliente SET nome_cliente = ?, email_cliente = ?, senha_cliente = ?"+
+				"WHERE id_cliente = ?";
 		
 		Connection conn = null;
 		PreparedStatement pstm = null;
